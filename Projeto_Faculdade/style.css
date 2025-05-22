@@ -75,26 +75,26 @@ header {
   position: relative;
   margin: 40px auto;
   width: 100%;
-  max-width: 1200px;
-  height: 600px;
+  max-width: 1300px;
+  height: 700px;
   overflow: hidden;
   border-radius: 12px;
 }
 
 .slides {
   display: flex;
-  width: calc(1200px * 4); /* 4 slides */
+  width: calc(1300px * 4); /* 4 slides */
   transition: margin-left 0.8s ease-in-out;
 }
 
 .slide {
-  width: 1200px;
+  width: 1300px;
   flex-shrink: 0;
 }
 
 .slide img {
   width: 100%;
-  height: 600px;
+  height: 700px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
@@ -208,7 +208,7 @@ header {
 @media (max-width: 1280px) {
   .slider {
     max-width: 1000px;
-    height: 500px;
+    height: 550px;
   }
   .slides {
     width: calc(1000px * 4);
@@ -217,14 +217,14 @@ header {
     width: 1000px;
   }
   .slide img {
-    height: 500px;
+    height: 550px;
   }
 }
 
 @media (max-width: 768px) {
   .slider {
     max-width: 100%;
-    height: 300px;
+    height: 320px;
   }
   .slides {
     width: calc(100% * 4);
@@ -233,10 +233,70 @@ header {
     width: 100%;
   }
   .slide img {
-    height: 300px;
+    height: 320px;
   }
   .arrow {
     font-size: 30px;
     padding: 12px;
   }
 }
+
+/* Seções de conteúdo com imagem e texto lado a lado */
+.content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 10%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.content-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.content-img {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.text-content {
+  width: 50%;
+  color: white;
+}
+
+.text-content h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #66b2ff;
+}
+
+.text-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .content-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-img, .text-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .text-content h1 {
+    font-size: 24px;
+  }
+
+  .text-content p {
+    font-size: 16px;
+  }
+}
+
