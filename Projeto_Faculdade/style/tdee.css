@@ -1,0 +1,93 @@
+
+
+/* tdde */
+
+
+.tdde-container {
+    background-color: #9352c1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%;
+    max-width: 450px; /* Largura máxima para a calculadora */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Estilo para o título */
+h1 {
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+/* Estilo para cada grupo de formulário (label + input/select) */
+.form-group {
+    margin-bottom: 18px;
+    text-align: left; /* Alinha o texto do label à esquerda */
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar a própria linha */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+    font-size: 16px;
+}
+
+/* Estilo para o botão de cálculo */
+button {
+    background-color: #2c062c; /* Azul vibrante */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+button:hover {
+    background-color: #671563; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo para a área de resultado */
+.resultado {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e9ecef; /* Fundo suave para o resultado */
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    color: #000000;
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 50px; /* Garante um tamanho mínimo para o resultado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para o aviso de isenção de responsabilidade */
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+
+/* fim do tdde */
+
+
+
+
+
+
