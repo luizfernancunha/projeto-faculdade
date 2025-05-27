@@ -72,7 +72,6 @@ header {
 
 /* paciente */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -87,7 +86,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #222;
-    padding-top: 100px;
+    padding-top: 100px; /* Space for fixed header if you have one */
 }
 
 .container {
@@ -97,6 +96,9 @@ body {
     box-shadow: 5px 5px 10px rgba(91, 37, 167, 0.5);
     margin: 15px 0;
     flex-wrap: wrap;
+    /* Added border-radius to the entire container */
+    border-radius: 15px; /* Adjust this value for more or less roundness */
+    overflow: hidden; /* Important to clip the children's corners */
 }
 
 .form-image {
@@ -106,6 +108,8 @@ body {
     align-items: center;
     background-color: rgb(122, 51, 187);
     padding: 1rem;
+    /* Left side rounded, right side sharp to meet the form */
+    border-radius: 15px 0 0 15px;
 }
 
 .form-image img {
@@ -121,6 +125,8 @@ body {
     flex-direction: column;
     background-color: #ffffff;
     padding: 1.5rem;
+    /* Right side rounded, left side sharp to meet the image */
+    border-radius: 0 15px 15px 0; /* Corrected syntax and applied roundness */
 }
 
 .form-header {
@@ -174,7 +180,7 @@ body {
 .continue-button button {
     width: 100%;
     margin-top: 1.2rem;
-    padding: 0.7rem;
+    padding: 1rem;
     background-color: #7a3fbb;
     border: none;
     border-radius: 5px;
@@ -193,17 +199,22 @@ body {
 }
 
 
+/* Media Queries */
+
 @media screen and (max-width: 1060px) {
     .container {
         width: 90%;
         height: auto;
-        flex-direction: column;
+        flex-direction: column; /* Stacks image and form vertically */
         max-width: 100%;
+        border-radius: 15px; /* Maintain overall container roundness */
     }
 
     .form-image {
         width: 100%;
         padding: 2rem;
+        /* Round top corners, sharp bottom corners when stacked */
+        border-radius: 15px 15px 0 0;
     }
 
     .form-image img {
@@ -213,6 +224,8 @@ body {
     .form {
         width: 100%;
         padding: 2rem;
+        /* Sharp top corners, round bottom corners when stacked */
+        border-radius: 0 0 15px 15px;
     }
 
     .input-group {
@@ -236,6 +249,8 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    /* Assuming navbar CSS is in a separate file or included */
+    /*
     #nav-list {
         display: none;
     }
@@ -247,17 +262,19 @@ body {
     #navbar {
         justify-content: center;
     }
-
+    */
     body {
-        padding-top: 80px;
+        padding-top: 80px; /* Adjust if your header height changes on mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
+    /* Assuming header CSS is in a separate file or included */
+    /*
     header {
         padding: 20px 4%;
     }
-
+    */
     .form-image img {
         width: 90%;
     }
