@@ -1,24 +1,100 @@
-*{
+/* nav-bar*/
+header {
+    width: 100%;
+    padding: 28px 8%;
+    background-color: #333;
+    /* Added for fixed positioning */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; /* Ensures the header is above other content */
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-logo {
+    font-size: 24px;
+    color: blueviolet;
+    font-weight: 700;
+}
+
+#nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item a:hover {
+    color: blueviolet;
+}
+
+.nav-item.active a {
+    color: blueviolet;
+    border-bottom: 3px solid blueviolet;
+}
+
+.btn-default {
+    padding: 8px 16px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-default:hover {
+    background-color: #6a1bbd;
+}
+
+.btn-default a {
+    text-decoration: none;
+    color: white; 
+}
+
+
+/* paciente*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-self: auto;   
-     background-color: #333;
+    align-items: center; /* Changed from align-self: auto; for better flexbox behavior */
+    background-color: #222;
+    /* Added margin-top to push content below the fixed header */
+    margin-top: 100px; /* Adjust this value based on your header's height */
 }
 
 .container {
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow:5px 5px 10px rgba(91, 37, 167, 0.5);
-    margin-top: 100px;
+    box-shadow: 5px 5px 10px rgba(91, 37, 167, 0.5);
+    margin-top: 75px;
 }
 
 .form-image {
@@ -33,25 +109,22 @@ body{
 .form-image img {
     width: 31rem;
 }
-.form{
+
+.form {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     background-color: #ffffff;
     padding: 7rem;
-
 }
-.form-header{
+
+.form-header {
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
 }
-
-
-
-
 
 .form-header h1::after {
     content: '';
@@ -64,29 +137,50 @@ body{
     border-radius: 0px;
 }
 
-
 .input-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 0;
-   
 }
 
-.input-box{
+.input-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.2rem;
     width: 48%;
 }
 
-
-.input-box input, .input-box select {
+.input-box input,
+.input-box select {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #5e1f85;
-   
 }
 
+.continue-button {
+    margin-top: 2rem;
+}
+
+.continue-button button {
+    width: 100%;
+    margin-top: 2.5rem;
+    padding: 0.62rem;
+    background-color: #7a3fbb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continue-button button:hover {
+    background-color: #5e1f85;
+}
+
+.continue-button button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}

@@ -2,18 +2,32 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paciente</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="../style/paciente.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-dumbbell" id="nav-logo">LIVE FIT</i>
+            <ul id="nav-list">
+                <li class="nav-item active"><a href="index.html">Inicio</a></li>
+                <li class="nav-item"><a href="muscu.html">Musculação</a></li>
+                <li class="nav-item"><a href="tdee.html">Cálculo</a></li>
+                <li class="nav-item"><a href="nutri.html">Nutrição</a></li>
+                <li class="nav-item"><a href="#">Paciente</a></li>
+                <li><button class="btn-default"><a href="login.html">Login</a></button></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="container">
         <div class="form-image">
-            <img src="../images/undraw_fitness-stats_uk0g.svg" alt="12">
+            <img src="../images/undraw_fitness-stats_uk0g.svg" alt="Fitness Stats">
         </div>
         <div class="form">
             <form action="#">
@@ -23,8 +37,6 @@
                     </div>
                 </div>
 
-
-                
                 <div class="input-group">
                     <div class="input-box">
                         <label for="fistname">Nome:</label>
@@ -44,15 +56,18 @@
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                             <option value="Outro">Outro</option>
-
                         </select>
                     </div>
 
                     <div class="input-box">
-                        <label for="altura">altura:</label>
-                        <input type="number" id="altura" name="fistname" placeholder="Digite sua altura" required>
+                        <label for="altura">Altura (cm):</label>
+                        <input type="number" id="altura" name="altura" placeholder="Digite sua altura em cm" required>
                     </div>
 
+                    <div class="input-box">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" id="peso" name="peso" placeholder="Digite seu peso em kg" required>
+                    </div>
 
 
                     <div class="input-box">
@@ -71,7 +86,6 @@
                         </select>
                     </div>
 
-
                     <div class="input-box">
                         <label for="objetivo">Objetivo:</label>
                         <select id="objetivo">
@@ -84,15 +98,13 @@
                             <option value="Reabilitação">Reabilitação (Pós-lesão)</option>
                         </select>
                     </div>
-                
+                </div>
 
+                <div class="continue-button">
+                    <button><a href="#">Cadastrar Paciente</a></button>
+                </div>
+            </form>
         </div>
-
-        <div class="continue-button">
-            <button><a href="#">cadastrar paciente</a></button>
-        </div>
-        </form>
-    </div>
     </div>
 </body>
 

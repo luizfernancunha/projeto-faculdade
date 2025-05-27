@@ -84,6 +84,7 @@ body {
     align-items: center;
     flex-grow: 1; 
     padding: 20px;
+    padding-top: 150px;
 }
 
 .container {
