@@ -1,13 +1,12 @@
-/* nav-bar*/
+/* nav-bar */
 header {
     width: 100%;
     padding: 28px 8%;
     background-color: #333;
-    /* Added for fixed positioning */
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: 1000; /* Ensures the header is above other content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 #navbar {
@@ -20,7 +19,10 @@ header {
 #nav-logo {
     font-size: 24px;
     color: blueviolet;
-    font-weight: 700;
+    font-weight: 900; 
+    display: inline-block; 
+    transform: scaleX(1.05); 
+    transform-origin: left;
 }
 
 #nav-list {
@@ -64,11 +66,11 @@ header {
 
 .btn-default a {
     text-decoration: none;
-    color: white; 
+    color: white;
 }
 
 
-/* paciente*/
+/* paciente */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
@@ -80,25 +82,25 @@ header {
 
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; /* Changed from align-self: auto; for better flexbox behavior */
+    align-items: center;
     background-color: #222;
-    /* Added margin-top to push content below the fixed header */
-    margin-top: 100px; /* Adjust this value based on your header's height */
+    padding-top: 100px;
 }
 
 .container {
-    width: 80%;
-    height: 80vh;
+    width: 85%;
+    max-width: 1100px;
     display: flex;
     box-shadow: 5px 5px 10px rgba(91, 37, 167, 0.5);
-    margin-top: 75px;
+    margin: 15px 0;
+    flex-wrap: wrap;
 }
 
 .form-image {
-    width: 50%;
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,23 +109,25 @@ body {
 }
 
 .form-image img {
-    width: 31rem;
+    max-width: 100%;
+    height: auto;
 }
 
 .form {
-    width: 50%;
+    width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
-    padding: 7rem;
+    padding: 1.5rem;
 }
 
 .form-header {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .form-header h1::after {
@@ -133,7 +137,7 @@ body {
     height: 0.3rem;
     background-color: #7a3fbb;
     margin-top: 10px;
-    margin: 0 auto;
+    margin-left: 0;
     border-radius: 0px;
 }
 
@@ -141,33 +145,36 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
+    width: 100%;
 }
 
 .input-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8rem;
     width: 48%;
 }
 
 .input-box input,
 .input-box select {
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
+    margin: 0.5rem 0;
+    padding: 0.7rem 1.1rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #5e1f85;
+    width: 100%;
 }
 
 .continue-button {
-    margin-top: 2rem;
+    margin-top: 1.2rem;
+    width: 100%;
 }
 
 .continue-button button {
     width: 100%;
-    margin-top: 2.5rem;
-    padding: 0.62rem;
+    margin-top: 1.2rem;
+    padding: 0.7rem;
     background-color: #7a3fbb;
     border: none;
     border-radius: 5px;
@@ -180,7 +187,91 @@ body {
 
 .continue-button button a {
     text-decoration: none;
-    font-size: 0.93rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: #fff;
+}
+
+
+@media screen and (max-width: 1060px) {
+    .container {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .form-image {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .form-image img {
+        width: 80%;
+    }
+
+    .form {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    .input-box {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .form-header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .form-header h1::after {
+        margin: 10px auto 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #nav-list {
+        display: none;
+    }
+
+    .btn-default {
+        display: none;
+    }
+
+    #navbar {
+        justify-content: center;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 20px 4%;
+    }
+
+    .form-image img {
+        width: 90%;
+    }
+
+    .form {
+        padding: 1.5rem;
+    }
+
+    .input-box input,
+    .input-box select {
+        padding: 0.6rem 1rem;
+    }
+
+    .continue-button button {
+        padding: 0.7rem;
+    }
 }
