@@ -56,12 +56,12 @@ body{
 .form-header h1::after {
     content: '';
     display: block;
-    width: 5rem;
+    width: 8rem;
     height: 0.3rem;
     background-color: #7a3fbb;
     margin-top: 10px;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 
