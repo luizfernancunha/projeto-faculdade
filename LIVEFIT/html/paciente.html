@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paciente</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>Cadastro de Paciente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="../style/paciente.css">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/SEU_CODIGO_DO_KIT_FONT_AWESOME.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,10 +15,10 @@
         <nav id="navbar">
             <i class="fa-solid fa-dumbbell" id="nav-logo">LIVE FIT</i>
             <ul id="nav-list">
-                <li class="nav-item active"><a href="index.html">Inicio</a></li>
-                <li class="nav-item"><a href="tdee.html">Cálculo</a></li>
+                <li class="nav-item active"><a href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a href="../tdee.html">Cálculo</a></li>
                 <li class="nav-item"><a href="#">Paciente</a></li>
-                <li><button class="btn-default"><a href="login.html">Login</a></button></li>
+                <li><button class="btn-default"><a href="../html/login.html">Login</a></button></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +28,7 @@
             <img src="../Imgs-site/undraw_fitness-stats_uk0g.svg" alt="Fitness Stats">
         </div>
         <div class="form">
-            <form action="#">
+            <form id="cadastroPacienteForm" action="../odio/pacientecadastro.php" method="post">
                 <div class="form-header">
                     <div class="title">
                         <h1>Paciente</h1>
@@ -37,19 +37,18 @@
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="fistname">Nome:</label>
-                        <input type="text" id="fistname" name="fistname" placeholder="Digite seu nome" required>
+                        <label for="inputNome">Nome:</label>
+                        <input type="text" name="nome" id="inputNome" placeholder="Digite seu nome" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="dataNascimento">Data de nascimento:</label>
-                        <input type="date" id="dataNascimento" name="fistname"
-                            placeholder="Coloque sua data de nascimento" required>
+                        <label for="inputDataNascimento">Data de nascimento:</label>
+                        <input type="date" name="data" id="inputDataNascimento" placeholder="Coloque sua data de nascimento" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="genero">Gênero:</label>
-                        <select id="genero">
+                        <label for="selectGenero">Gênero:</label>
+                        <select id="selectGenero" name="genero" required>
                             <option value="">Selecione</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
@@ -58,35 +57,30 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="altura">Altura (cm):</label>
-                        <input type="number" id="altura" name="altura" placeholder="Digite sua altura em cm" required>
+                        <label for="inputAltura">Altura (cm):</label>
+                        <input type="number" name="altura" id="inputAltura" placeholder="Digite sua altura em cm" step="0.01" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="peso">Peso (kg):</label>
-                        <input type="number" id="peso" name="peso" placeholder="Digite seu peso em kg" required>
+                        <label for="inputPeso">Peso (kg):</label>
+                        <input type="number" id="inputPeso" name="peso" placeholder="Digite seu peso em kg" step="0.1" required>
                     </div>
 
-
                     <div class="input-box">
-                        <label for="nivelAtividade">Nível de Atividade:</label>
-                        <select id="nivelAtividade">
+                        <label for="selectNivelAtividade">Nível de Atividade:</label>
+                        <select id="selectNivelAtividade" name="nivel" required>
                             <option value="">Selecione</option>
                             <option value="Sedentário">Sedentário (Pouco ou nenhum exercício)</option>
-                            <option value="Levemente Ativo">Levemente Ativo (Exercício leve/esportes 1-3 dias/semana)
-                            </option>
-                            <option value="Moderadamente Ativo">Moderadamente Ativo (Exercício moderado/esportes 3-5
-                                dias/semana)</option>
-                            <option value="Muito Ativo">Muito Ativo (Exercício intenso/esportes 6-7 dias/semana)
-                            </option>
-                            <option value="Extremamente Ativo">Extremamente Ativo (Exercício muito intenso
-                                diário/trabalho físico)</option>
+                            <option value="Levemente Ativo">Levemente Ativo (Exercício leve/esportes 1-3 dias/semana)</option>
+                            <option value="Moderadamente Ativo">Moderadamente Ativo (Exercício moderado/esportes 3-5 dias/semana)</option>
+                            <option value="Muito Ativo">Muito Ativo (Exercício intenso/esportes 6-7 dias/semana)</option>
+                            <option value="Extremamente Ativo">Extremamente Ativo (Exercício muito intenso diário/trabalho físico)</option>
                         </select>
                     </div>
 
                     <div class="input-box">
-                        <label for="objetivo">Objetivo:</label>
-                        <select id="objetivo">
+                        <label for="selectObjetivo">Objetivo:</label>
+                        <select id="selectObjetivo" name="objetivo" required>
                             <option value="">Selecione</option>
                             <option value="Emagrecer">Emagrecer</option>
                             <option value="Ganhar Massa Muscular">Ganhar Massa Muscular</option>
@@ -99,11 +93,13 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Cadastrar Paciente</a></button>
+                    <button type="submit">Cadastrar Paciente</button>
                 </div>
+                <div id="responseMessage" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
             </form>
         </div>
     </div>
+ <script src="../js/scriptipaciente.js"></script>
 </body>
 
 </html>
