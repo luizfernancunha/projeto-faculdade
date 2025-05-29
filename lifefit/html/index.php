@@ -14,10 +14,11 @@
     <nav id="navbar">
       <i class="fa-solid fa-dumbbell" id="nav-logo">LIVE FIT</i>
       <ul id="nav-list">
-        <li class="nav-item active"><a href="index.html">Inicio</a></li>
-        <li class="nav-item"><a href="tdee.html">Cálculo</a></li>
-        <li class="nav-item"><a href="paciente.html">Paciente</a></li>
-        <li><button class="btn-default"><a href="login.html">Login</a></button></li>
+        <li class="nav-item "><a href="index.php">Inicio</a></li>
+        <li class="nav-item"><a href="../html/calculadora.php">Cálculo</a></li>
+        <li class="nav-item"><a href="../html/paciente.php">Paciente</a></li>
+        <li class="nav-item"><a href="../html/avaliacao.php">Avaliação</a></li> 
+        <li><button class="btn-default"><a href="../html/login.php">Login</a></button></li>
       </ul>
     </nav>
   </header>

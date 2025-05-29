@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #222;
+  color: white;
+  padding-top: 90px; /* Adjust if header height changes */
+}
+
+header {
+  width: 100%;
+  padding: 28px 8%;
+  background-color: #333;
+  position: fixed; /* Makes header fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-logo {
+    font-size: 24px;
+    color: blueviolet;
+    font-weight: 900;
+    display: inline-block;
+    transform: scaleX(1.05);
+    transform-origin: left;
+}
+
+#nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 5px; /* Space for border */
+}
+
+.nav-item a:hover {
+  color: blueviolet;
+}
+
+.nav-item a {
+  color: blueviolet;
+  border-bottom: 3px solid blueviolet;
+}
+
+.btn-default {
+  padding: 8px 16px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-default a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-default:hover {
+  background-color: #6a1bbd;
+}
+
+.evaluation-container {
+    background-color: #3f3f3f; /* Darker shade for the form area */
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px; /* Max width for the form */
+    margin: 40px auto; /* Centering the container */
+    color: #f0f0f0;
+}
+
+.evaluation-container h1 {
+    color: blueviolet;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e0e0e0; /* Lighter label color */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #2c2c2c; /* Dark input background */
+    color: white; /* Light text color for input */
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+    border-color: blueviolet;
+    outline: none;
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize only */
+    min-height: 100px;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 15px;
+}
+
+.form-actions button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-actions .btn-salvar {
+    background-color: blueviolet;
+    color: white;
+}
+
+.form-actions .btn-salvar:hover {
+    background-color: #6a1bbd;
+    transform: translateY(-2px);
+}
+
+.form-actions .btn-limpar {
+    background-color: #555; /* Grey color for clear button */
+    color: white;
+}
+
+.form-actions .btn-limpar:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Adjust if header is smaller on mobile */
+    }
+    header {
+        padding: 20px 5%;
+    }
+    #nav-list {
+        /* Basic responsive navbar: could be hidden behind a burger menu in a full implementation */
+        gap: 20px;
+    }
+    .evaluation-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .evaluation-container h1 {
+        font-size: 24px;
+    }
+    .form-actions {
+        flex-direction: column; /* Stack buttons on smaller screens */
+    }
+    .form-actions button {
+        width: 100%;
+    }
+}

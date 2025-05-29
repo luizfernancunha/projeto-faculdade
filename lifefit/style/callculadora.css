@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o cabeçalho (navbar) */
+header {
+    width: 100%;
+    padding: 28px 8%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-logo {
+    font-size: 24px;
+    color: blueviolet;
+    font-weight: 900;
+    display: inline-block;
+    transform: scaleX(1.05);
+    transform-origin: left;
+}
+
+#nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item a:hover {
+    color: blueviolet;
+}
+
+.nav-item.active a {
+    color: blueviolet;
+    border-bottom: 3px solid blueviolet;
+}
+
+.btn-default {
+    padding: 8px 16px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-default:hover {
+    background-color: #6a1bbd;
+}
+
+/* Ajustes no body para acomodar a navbar fixa e centralizar o conteúdo */
+body {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+    padding-top: 80px; 
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    background-color: blueviolet;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+
+    padding: 3.5rem; 
+    max-width: 1000px; 
+    width: 90%; 
+    margin-top: 50px; 
+    margin-bottom: 50px; 
+}
+
+#img {
+    flex-shrink: 0;
+}
+
+#img img {
+    width: 31rem;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    color: #F0F2F5;
+    background-color: #4A3B6F;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#title {
+    font-size: 2.5rem;
+    position: relative;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+#title::after {
+    position: absolute;
+    content: '';
+    width: 10rem;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #9C7DED;
+    bottom: -0.5rem;
+    left: 0;
+}
+
+.input-box label {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #D1C4E9;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    background-color: #6A5ACD;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.input-field:focus-within {
+    background-color: #7A69E0;
+}
+
+.input-field span,
+.input-field i {
+    color: #E6E6FA;
+    font-size: 1.4rem;
+    padding-right: 0.8rem;
+}
+
+.input-field input,
+.input-field select {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    padding: 0.2rem 0;
+    outline: none;
+}
+
+.input-field input::-webkit-outer-spin-button,
+.input-field input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-field select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.input-field select option {
+    background-color: #6A5ACD;
+    color: #FFFFFF;
+}
+
+#calculate {
+    border: none;
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #9C7DED;
+    padding: 0.8rem 0;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+#calculate:hover {
+    background-color: #B5A0F5;
+}
+
+#result {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 0 0.75rem;
+    margin-top: 1.5rem;
+}
+
+#bmi {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+#bmi span:last-child {
+    font-size: 1rem;
+    color:#D1C4E9;
+    margin-top: 0.2rem;
+}
+
+.normal {
+    color: #8BC34A;
+}
+
+.attention {
+    color: #FF5722;
+}
+
+#description{
+    width: 100%;
+    font-size: 1.1rem;
+    color: #E6E6FA;
+}
+
+#more_info {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+#more_info a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    color: #9C7DED;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#more_info a:hover {
+    color: #B5A0F5;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    #img {
+        display: none;
+    }
+
+    #container {
+        padding: 2.5rem; 
+        max-width: 700px; 
+        width: 95%; 
+        margin-bottom: 40px; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    header {
+        padding: 15px 4%;
+    }
+    #navbar {
+        flex-direction: row;
+        gap: 15px;
+    }
+    #nav-list {
+        gap: 15px;
+    }
+
+    #container {
+        flex-direction: column;
+        padding: 1.5rem;
+        border-radius: 0;
+        height: auto;
+        min-height: calc(100vh - 70px);
+        width: 100%;
+        margin-top: 0; 
+        margin-bottom: 0; 
+    }
+
+    #calculator {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    #title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    #title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8rem;
+    }
+
+    #result {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    #bmi {
+        font-size: 2.5rem;
+    }
+
+    #description {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    header {
+        padding: 10px 3%;
+    }
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #nav-list {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #container {
+        padding: 1rem;
+        max-width: unset;
+        width: 100%;
+    }
+
+    #calculator {
+        padding: 1rem;
+    }
+
+    #title {
+        font-size: 1.8rem;
+    }
+
+    .input-box label {
+        font-size: 1rem;
+    }
+
+    .input-field input,
+    .input-field select {
+        font-size: 1rem;
+    }
+
+    #calculate {
+        font-size: 1.1rem;
+        padding: 0.6rem 0;
+    }
+
+    #bmi {
+        font-size: 2rem;
+    }
+
+    #bmi span:last-child {
+        font-size: 0.9rem;
+    }
+
+    #description {
+        font-size: 1rem;
+    }
+
+    #more_info a {
+        font-size: 0.85rem;
+    }
+}
