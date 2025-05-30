@@ -39,26 +39,25 @@ $result = $conn->query ($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema - GN</title>
-    <link rel="stylesheet" href="../style/sistema.css">
+    <link rel="stylesheet" href="../style/SISTEMA.CSS">
 </head>
 <body>
 
-
-    <div class="m-5">
-        <table class="table text-white table-bg">
-        <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Mensagem</th>
-                     <th scope="col">...</th>
-                </tr>
-        </thead>
-
-        <tbody>
-         <!-- luis aqui é php no video (4:00) -->
-           <?php
+    <div class="container">
+        <div class="user-data-box">
+            <h2>Dados do Usuário</h2>
+            <div class="table-responsive">
+                <table class="table text-white table-bg">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mensagem</th>
+                            <th scope="col">Ações</th> </tr>
+                    </thead>
+                    <tbody>
+                      <?php
           while($user_data= mysqli_fetch_assoc($result))
           {
             echo"<tr>";
@@ -72,8 +71,12 @@ $result = $conn->query ($sql);
 
 
         ?>
-        </tbody>
-</table>
+
+          
+                   </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     
 </body>

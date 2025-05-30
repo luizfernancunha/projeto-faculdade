@@ -61,7 +61,7 @@ header {
 }
 
 .nav-item a:hover {
-    /*color: blueviolet;*/ /* Esta linha está comentada no seu CSS original. Se quiser efeito, descomente ou defina uma cor. */
+    color: blueviolet;
 }
 
 .nav-item.active a { /* Estilo para o link ativo na navbar */

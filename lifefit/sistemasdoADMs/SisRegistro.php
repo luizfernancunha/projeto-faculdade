@@ -29,15 +29,6 @@ $result = $conn->query ($sql);
 
 
 
-
-
-
-
-
-
-
-
-
 <!--php aqui minuto (0:48)-->
 
 
@@ -47,19 +38,21 @@ $result = $conn->query ($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema - GN</title>
-    <link rel="stylesheet" href="../style/sistema.css">
+    <link rel="stylesheet" href="../style/SISTEMA.CSS">
 </head>
 <body>
 
-
-    <div class="m-5">
-        <table class="table text-white table-bg">
-        <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Senha</th>
+    <div class="container">
+        <div class="user-data-box">
+            <h2>Dados do Usuário</h2>
+            <div class="table-responsive">
+                <table class="table text-white table-bg">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Senha</th>
                      <th scope="col">...</th>
                 </tr>
         </thead>
