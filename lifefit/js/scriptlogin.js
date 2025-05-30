@@ -9,20 +9,7 @@ const mensagemRegistroDiv = document.getElementById('mensagemRegistro'); // Pega
 
 // Elementos do formulário de LOGIN
 const loginForm = document.querySelector('.form-box.login form');
-// Pega a div de mensagem de login que agora está no HTML (recomendado)
 const loginMessageDiv = document.getElementById('loginMessage');
-// Se você preferir que o JS crie, remova a div do HTML e descomente o bloco abaixo:
-/*
-const loginMessageDiv = document.createElement('div');
-loginMessageDiv.style.textAlign = 'center';
-loginMessageDiv.style.fontWeight = 'bold';
-loginMessageDiv.style.marginBottom = '10px';
-loginMessageDiv.id = 'loginMessage';
-if (!loginForm.querySelector('#loginMessage')) {
-    loginForm.prepend(loginMessageDiv);
-}
-*/
-
 
 // --- Lógica dos Botões de Alternância (Registro/Login) ---
 registerBtn.addEventListener('click', () => {
@@ -51,5 +38,37 @@ loginBtn.addEventListener('click', () => {
     }
 });
 
+// --- Funcionalidade de Mostrar/Esconder Senha ---
 
+// Para o formulário de Login
+const loginPasswordInput = document.getElementById('loginPassword');
+const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+
+if (toggleLoginPassword && loginPasswordInput) {
+    toggleLoginPassword.addEventListener('click', function() {
+        // Alterna o atributo 'type' entre 'password' e 'text'
+        const type = loginPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        loginPasswordInput.setAttribute('type', type);
+
+        // Alterna os ícones de olho (aberto/fechado)
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash'); // 'fa-eye-slash' é o ícone de olho cortado
+    });
+}
+
+// Para o formulário de Registro
+const registerPasswordInput = document.getElementById('registerPassword');
+const toggleRegisterPassword = document.getElementById('toggleRegisterPassword');
+
+if (toggleRegisterPassword && registerPasswordInput) {
+    toggleRegisterPassword.addEventListener('click', function() {
+        // Alterna o atributo 'type' entre 'password' e 'text'
+        const type = registerPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        registerPasswordInput.setAttribute('type', type);
+
+        // Alterna os ícones de olho (aberto/fechado)
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash'); // 'fa-eye-slash' é o ícone de olho cortado
+    });
+}
 

@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 //print_r($_REQUEST)
 if(isset($_POST['submit'])&& !empty($_POST['email']) && !empty($_POST['senha']))
 {
@@ -29,11 +27,6 @@ $sql = "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
         //Acessa
         header('Location: ./html/index.php');
     }
-
-
-
-
-
 
 
 

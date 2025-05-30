@@ -36,17 +36,6 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -65,14 +54,9 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                 <li class="nav-item"><a href="../html/calculadora.php">Cálculo</a></li>
                 <li class="nav-item"><a href="../html/paciente.php">Paciente</a></li>
                 <li class="nav-item "><a href="../html/avaliacao.php">Avaliação</a></li> 
-                
             </ul>
         </nav>
     </header>
-
-
-
-
 
     <div class="main-content">
         <div class="container <?php echo $form_active_class; ?>">
@@ -96,7 +80,8 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                         <input type="email" placeholder="email" name="email" required><i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="senha" placeholder="senha" name="senha" required><i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="senha" name="senha" id="loginPassword" required>
+                        <i class="fa-solid fa-eye" id="toggleLoginPassword" style="cursor: pointer;"></i>
                     </div>
                     <div class="forgot-link">
                         <a href="#">Esqueceu sua senha?</a>
@@ -112,28 +97,11 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                 </form>
             </div>
 
-
-
-
-
-
-
-
-
-
-            <!-- Formulário de Registro --> 
-
-
-
-
-
-
-
             <div class="form-box register">
                 <form action="../html/login.php" method="post">
                     <h1>Registre-se</h1>
                     <div id="mensagemRegistro" class="message-area">
-                       
+                        
                     </div>
                     <div class="input-box">
                         <input type="text" placeholder="nome" name="nome" value="<?php echo htmlspecialchars($name ?? ''); ?>" required><i class="fa-solid fa-user"></i>
@@ -142,7 +110,8 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                         <input type="email" placeholder="email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" required><i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="senha" name="senha" required><i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="senha" name="senha" id="registerPassword" required>
+                        <i class="fa-solid fa-eye" id="toggleRegisterPassword" style="cursor: pointer;"></i>
                     </div>
                     <button type="submit" class="btn" name="submit">Registre-se</button>
                     <p>ou registre-se pelas suas plataformas</p>
