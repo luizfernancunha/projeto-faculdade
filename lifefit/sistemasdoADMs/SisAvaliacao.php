@@ -1,3 +1,23 @@
+<?php
+
+include_once '../conexao.php';
+
+
+$sql = "SELECT * FROM avaliacao ORDER BY idavaliacao desc" ;
+
+
+$result = $conn->query ($sql);
+
+
+
+?>
+
+
+
+
+
+
+
 
 <!--php aqui minuto (0:48)-->
 
@@ -28,6 +48,21 @@
 
         <tbody>
          <!-- luis aqui é php no video (4:00) -->
+           <?php
+          while($user_data= mysqli_fetch_assoc($result))
+          {
+            echo"<tr>";
+            echo "<td>".$user_data['idavaliacao']."</td>";
+            echo "<td>".$user_data['nome']."</td>";
+            echo "<td>".$user_data['dataAvaliacao']."</td>";
+            echo "<td>".$user_data['PlanoExercicios']."</td>";
+            echo "<td>".$user_data['PlanoAlimentar']."</td>";
+            echo "<td>acoes</td>";
+          }
+
+
+
+        ?>
         </tbody>
 </table>
     </div>

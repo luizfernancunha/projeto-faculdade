@@ -1,3 +1,42 @@
+<?php
+
+include_once '../conexao.php';
+
+
+$sql = "SELECT * FROM usuario ORDER BY idusuario desc" ;
+
+
+$result = $conn->query ($sql);
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--php aqui minuto (0:48)-->
 
@@ -20,13 +59,27 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Mensagem</th>
+                    <th scope="col">Senha</th>
                      <th scope="col">...</th>
                 </tr>
         </thead>
 
         <tbody>
          <!-- luis aqui é php no video (4:00) -->
+        <?php
+          while($user_data= mysqli_fetch_assoc($result))
+          {
+            echo"<tr>";
+            echo "<td>".$user_data['idusuario']."</td>";
+            echo "<td>".$user_data['nome']."</td>";
+            echo "<td>".$user_data['email']."</td>";
+            echo "<td>".$user_data['senha']."</td>";
+            echo "<td>acoes</td>";
+          }
+
+
+
+        ?>
         </tbody>
 </table>
     </div>

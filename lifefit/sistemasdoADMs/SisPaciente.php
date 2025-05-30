@@ -1,3 +1,17 @@
+<?php
+
+include_once '../conexao.php';
+
+
+$sql = "SELECT * FROM paciente ORDER BY idpaciente desc" ;
+
+
+$result = $conn->query ($sql);
+
+
+?>
+
+
 
 <!--php aqui minuto (0:48)-->
 
@@ -31,6 +45,23 @@
 
         <tbody>
          <!-- luis aqui é php no video (4:00) -->
+           <?php
+          while($user_data= mysqli_fetch_assoc($result))
+          {
+            echo"<tr>";
+            echo "<td>".$user_data['idpaciente']."</td>";
+            echo "<td>".$user_data['nome']."</td>";
+            echo "<td>".$user_data['datanacimento']."</td>";
+            echo "<td>".$user_data['genero']."</td>";
+            echo "<td>".$user_data['peso']."</td>";
+            echo "<td>".$user_data['nivel_de_atividade']."</td>";
+            echo "<td>".$user_data['objetivo']."</td>";
+            echo "<td>acoes</td>";
+          }
+
+
+
+        ?>
         </tbody>
 </table>
     </div>
