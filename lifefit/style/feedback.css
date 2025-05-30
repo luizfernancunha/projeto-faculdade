@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #222; /* Fundo escuro */
+  color: white;
+  padding-top: 90px; /* Espaço para o cabeçalho fixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Estilos do cabeçalho (navbar) */
+header {
+  width: 100%;
+  padding: 28px 8%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-logo {
+    font-size: 24px;
+    color: blueviolet;
+    font-weight: 900;
+    display: inline-block;
+    transform: scaleX(1.05);
+    transform-origin: left;
+}
+
+#nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 5px;
+}
+
+.nav-item a:hover {
+  /*color: blueviolet;*/
+}
+
+.nav-item.active a { /* Estilo para o link ativo na navbar */
+  color: white;
+  border-bottom: none;
+}
+
+.btn-default {
+  padding: 8px 16px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-default a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-default:hover {
+  background-color: #6a1bbd;
+}
+
+/* ESTILOS PARA O CONTAINER PRINCIPAL DO FEEDBACK */
+.feedback-container {
+    background-color: blueviolet;
+    padding: 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feedback-container h1 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.feedback-container h1::after {
+    position: absolute;
+    content: '';
+    width: 10rem;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #4d0f8e;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mensagens de resposta do PHP */
+.response-message {
+    padding: 12px 15px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.05em;
+    border: 1px solid transparent;
+}
+.response-message.success {
+    background-color: #e6ffed;
+    color: #228b22; /* ForestGreen */
+    border-color: #b7e8c1;
+}
+.response-message.error {
+    background-color: #ffebee;
+    color: #c62828; /* Red darken-3 */
+    border-color: #f5c6cb;
+}
+
+/* Estilo para os grupos de formulário */
+.form-group {
+    margin-bottom: 1.2rem; /* Ajustado espaçamento */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem; /* Ajustado espaçamento */
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem; /* Ajustado padding */
+    border: 1px solid #ddd; /* Adicionada borda sutil */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.05rem; /* Ajustado font-size */
+    background-color: #ffffff;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    background-color: #f7f2ff; /* Roxo bem claro no foco */
+    border-color: #4d0f8e; /* Borda roxa no foco */
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Estilos para os botões de ação do formulário */
+.form-actions {
+    margin-top: 1.5rem; /* Ajustado margin-top */
+    display: flex;
+    justify-content: center;
+}
+
+.form-actions .btn-enviar {
+    padding: 0.9rem 2.2rem; /* Ajustado padding */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4d0f8e;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-actions .btn-enviar:hover {
+    background-color: #3b0b6e;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    header {
+        padding: 20px 5%;
+    }
+    #navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    #nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduzido gap para mobile */
+        width: 100%;
+    }
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-item a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: none; /* Remover borda em mobile */
+    }
+    .nav-item.active a {
+        background-color: #4d0f8e;
+        border-radius: 6px;
+        color: white; /* Garantir texto branco no ativo */
+    }
+     .btn-default {
+        width: 90%; /* Ajustado para ocupar mais espaço */
+        max-width: 250px; /* Limite máximo */
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+    }
+    .btn-default a{
+        display: block;
+        padding: 8px 0; /* Adicionado padding ao link do botão */
+    }
+
+    .feedback-container {
+        margin: 20px auto;
+        padding: 2rem;
+        width: 95%;
+    }
+    .feedback-container h1 {
+        font-size: 2rem;
+    }
+    .feedback-container h1::after {
+        width: 8rem;
+    }
+    .form-actions .btn-enviar {
+        width: 100%;
+        font-size: 1.1rem; /* Botão um pouco menor */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 120px; /* Aumentar padding-top se navbar empilhada ocupa mais espaço */
+    }
+    #navbar {
+        gap: 10px; /* Ajustar gap da navbar */
+    }
+     header {
+        padding: 15px 3%;
+    }
+    #nav-list {
+        gap: 8px;
+    }
+    .feedback-container {
+        padding: 1.5rem;
+    }
+    .feedback-container h1 {
+        font-size: 1.8rem;
+    }
+    .form-group label {
+        font-size: 1rem;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 0.7rem 0.9rem;
+    }
+    .form-actions .btn-enviar {
+        font-size: 1rem;
+        padding: 0.8rem 1.8rem;
+    }
+    .response-message {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+}

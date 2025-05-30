@@ -53,6 +53,7 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                 <li class="nav-item "><a href="../html/index.php">Inicio</a></li>
                 <li class="nav-item"><a href="../html/calculadora.php">Cálculo</a></li>
                 <li class="nav-item"><a href="../html/paciente.php">Paciente</a></li>
+                <li class="nav-item"><a href="../html/feedback.php">Feedback</a></li>
                 <li class="nav-item "><a href="../html/avaliacao.php">Avaliação</a></li> 
             </ul>
         </nav>

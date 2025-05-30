@@ -81,6 +81,7 @@ $result = mysqli_query($conn ,"INSERT INTO avaliacao(nome,dataAvaliacao,PlanoExe
                 <li class="nav-item"><a href="../html/calculadora.php">Cálculo</a></li>
                 <li class="nav-item"><a href="../html/paciente.php">Paciente</a></li>
                 <li class="nav-item"><a href="../html/avaliacao.php">Avaliação</a></li> 
+                <li class="nav-item"><a href="../html/feedback.php">Feedback</a></li>
                 <li><button class="btn-default"><a href="../html/login.php">Login</a></button></li>
             </ul>
         </nav>
@@ -91,7 +92,7 @@ $result = mysqli_query($conn ,"INSERT INTO avaliacao(nome,dataAvaliacao,PlanoExe
         <form id="formAvaliacao" action="../html/avaliacao.php" method="POST">
             <div class="form-group">
                 <label for="nomePaciente">Nome do Paciente:</label>
-                <input type="text" id="nomePaciente" name="nome" required>
+                <input type="text" id="nomePaciente" name="nome" placeholder="Digite seu nome " required>
             </div>
 
             <div class="form-group">

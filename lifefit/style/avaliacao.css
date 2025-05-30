@@ -155,7 +155,7 @@ header {
     box-sizing: border-box;
     font-size: 1.2rem; /* Tamanho da fonte */
     background-color: #ffffff; /* Fundo dos campos similar à calculadora */
-    color: #7a7676; /* Cor do texto digitado */
+    color: black; /* Cor do texto digitado */
     transition: background-color 0.3s ease; /* Transição suave no hover/focus */
     outline: none; /* Remove a borda de foco padrão do navegador */
 }
