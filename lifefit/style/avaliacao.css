@@ -8,16 +8,21 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #222; /* Fundo escuro */
   color: white;
-  padding-top: 90px; /* Adjust if header height changes */
+  padding-top: 90px; /* Espaço para o cabeçalho fixo */
+  display: flex; /* Habilita flexbox para o corpo */
+  flex-direction: column; /* Organiza itens em coluna (cabeçalho, main) */
+  align-items: center; /* Centraliza o conteúdo horizontalmente no corpo */
+  min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da tela */
 }
 
+/* Estilos do cabeçalho (navbar) - Mantido igual ao da calculadora */
 header {
   width: 100%;
   padding: 28px 8%;
   background-color: #333;
-  position: fixed; /* Makes header fixed at the top */
+  position: fixed; /* Fixa o cabeçalho no topo */
   top: 0;
   left: 0;
   z-index: 1000;
@@ -52,18 +57,20 @@ header {
   color: white;
   font-weight: 600;
   transition: color 0.3s, border-bottom 0.3s;
-  padding-bottom: 5px; /* Space for border */
+  padding-bottom: 5px; /* Espaço para a borda inferior */
 }
 
 .nav-item a:hover {
   color: blueviolet;
 }
 
-.nav-item a {
+/* Garante que o item "Avaliação" esteja com o estilo ativo */
+.nav-item.active a {
   color: blueviolet;
   border-bottom: 3px solid blueviolet;
 }
 
+/* Estilo para o botão padrão, como o de Login na navbar */
 .btn-default {
   padding: 8px 16px;
   background-color: blueviolet;
@@ -76,101 +83,128 @@ header {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
 
+/* Remove o sublinhado do link dentro do botão de login */
 .btn-default a {
   text-decoration: none;
-  color: white;
+  color: white; /* Mantém a cor branca do texto do botão */
 }
 
 .btn-default:hover {
   background-color: #6a1bbd;
 }
 
+/* ESTILOS PARA O CONTAINER PRINCIPAL DA AVALIAÇÃO */
 .evaluation-container {
-    background-color: #3f3f3f; /* Darker shade for the form area */
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 700px; /* Max width for the form */
-    margin: 40px auto; /* Centering the container */
-    color: #f0f0f0;
+    background-color: blueviolet; /* Cor de fundo similar ao da calculadora */
+    padding: 3.5rem; /* Padding interno */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    width: 90%; /* Largura em porcentagem */
+    max-width: 800px; /* Largura máxima para telas maiores (ajuste conforme preferir) */
+    margin: 40px auto; /* Centraliza o container e adiciona margem superior/inferior */
+    color: #f0f0f0; /* Cor do texto dentro do container */
+
+    /* Para o formulário dentro do container, se desejar flex-direction: column e gap */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaçamento entre os grupos de formulário */
 }
 
 .evaluation-container h1 {
-    color: blueviolet;
-    margin-bottom: 25px;
+    color: #FFFFFF; /* Título branco */
+    font-size: 2.5rem; /* Tamanho do título */
     text-align: center;
-    font-size: 28px;
+    margin-bottom: 1rem; /* Margem abaixo do título */
+    position: relative;
 }
 
+/* Linha decorativa abaixo do título, como na calculadora */
+.evaluation-container h1::after {
+    position: absolute;
+    content: '';
+    width: 10rem;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #4d0f8e;
+    bottom: -0.5rem;
+    left: 50%; /* Centraliza a linha */
+    transform: translateX(-50%); /* Ajuste para centralizar a linha */
+}
+
+/* Estilo para os grupos de formulário */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem; /* Espaçamento entre os grupos de formulário (alternativa ao gap no container) */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #e0e0e0; /* Lighter label color */
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #000000; /* Cor do label similar à da calculadora */
 }
 
+/* Estilo para os inputs de texto, data e textareas */
 .form-group input[type="text"],
 .form-group input[type="date"],
 .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #555; /* Darker border */
-    border-radius: 5px;
+    padding: 0.5rem 1rem; /* Padding interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 6px; /* Cantos arredondados */
     box-sizing: border-box;
-    font-size: 16px;
-    background-color: #2c2c2c; /* Dark input background */
-    color: white; /* Light text color for input */
-    transition: border-color 0.3s;
+    font-size: 1.2rem; /* Tamanho da fonte */
+    background-color: #ffffff; /* Fundo dos campos similar à calculadora */
+    color: #7a7676; /* Cor do texto digitado */
+    transition: background-color 0.3s ease; /* Transição suave no hover/focus */
+    outline: none; /* Remove a borda de foco padrão do navegador */
 }
 
+/* Estilo de foco para os campos */
 .form-group input[type="text"]:focus,
 .form-group input[type="date"]:focus,
 .form-group textarea:focus {
-    border-color: blueviolet;
-    outline: none;
-    box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+    background-color: #7A69E0; /* Cor de fundo no foco */
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.5); /* Sombra de foco com a cor roxa */
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resize only */
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
     min-height: 100px;
 }
 
+/* Estilos para os botões de ação do formulário */
 .form-actions {
-    margin-top: 30px;
+    margin-top: 2rem; /* Margem superior para separar dos campos */
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
-    gap: 15px;
+    justify-content: center; /* Centraliza os botões */
+    gap: 1.5rem; /* Espaçamento entre os botões */
 }
 
 .form-actions button {
-    padding: 12px 25px;
+    padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease, transform 0.2s;
+    flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
+    max-width: 200px; /* Largura máxima para os botões */
 }
 
 .form-actions .btn-salvar {
-    background-color: blueviolet;
-    color: white;
+    background-color:#4d0f8e; /* Cor do botão Salvar similar ao da calculadora */
 }
 
 .form-actions .btn-salvar:hover {
-    background-color: #6a1bbd;
+    background-color: #B5A0F5; /* Cor no hover */
     transform: translateY(-2px);
 }
 
 .form-actions .btn-limpar {
-    background-color: #555; /* Grey color for clear button */
-    color: white;
+    background-color: #424141; /* Cor cinza para o botão Limpar */
 }
 
 .form-actions .btn-limpar:hover {
@@ -178,29 +212,72 @@ header {
     transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
+/* Responsividade */
 @media (max-width: 768px) {
     body {
-        padding-top: 70px; /* Adjust if header is smaller on mobile */
+        padding-top: 70px;
     }
     header {
         padding: 20px 5%;
     }
+    #navbar {
+        flex-direction: column; /* Empilha itens da navbar em telas menores */
+        gap: 15px;
+    }
     #nav-list {
-        /* Basic responsive navbar: could be hidden behind a burger menu in a full implementation */
-        gap: 20px;
+        gap: 15px;
     }
     .evaluation-container {
         margin: 20px auto;
         padding: 20px;
+        border-radius: 0; /* Remove borda em telas muito pequenas, se desejar */
+        max-width: 100%; /* Ocupa a largura total */
     }
     .evaluation-container h1 {
-        font-size: 24px;
+        font-size: 2rem;
+    }
+    .evaluation-container h1::after {
+        width: 8rem;
     }
     .form-actions {
-        flex-direction: column; /* Stack buttons on smaller screens */
+        flex-direction: column; /* Empilha botões em telas menores */
+        gap: 10px;
     }
     .form-actions button {
         width: 100%;
+        max-width: none; /* Remove a largura máxima para que ocupem 100% */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    header {
+        padding: 10px 3%;
+    }
+    #navbar {
+        gap: 10px;
+    }
+    #nav-list {
+        gap: 10px;
+    }
+    .evaluation-container {
+        padding: 15px;
+    }
+    .evaluation-container h1 {
+        font-size: 1.8rem;
+    }
+    .form-group label {
+        font-size: 1rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .form-actions button {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
     }
 }

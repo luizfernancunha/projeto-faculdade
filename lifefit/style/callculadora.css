@@ -58,6 +58,19 @@ header {
     border-bottom: 3px solid blueviolet;
 }
 
+/* NOVO ESTILO: Remover sublinhado de links dentro de botões com a classe btn-default */
+.btn-default a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Garante que a cor do link seja a cor do texto do botão */
+}
+
+/* Certifique-se de que o hover do link dentro do botão não adicione sublinhado */
+.btn-default a:hover {
+    text-decoration: none;
+    color: white; /* Mantém a cor branca no hover para o link do botão */
+}
+
+
 .btn-default {
     padding: 8px 16px;
     background-color: blueviolet;
@@ -94,9 +107,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     
-
     padding: 3.5rem; 
-    max-width: 1000px; 
+    max-width: 1100px; 
     width: 90%; 
     margin-top: 50px; 
     margin-bottom: 50px; 
@@ -186,6 +198,28 @@ body {
     padding: 0.2rem 0;
     outline: none;
 }
+
+/* NOVO ESTILO: Para tornar o placeholder mais visível */
+.input-field input::placeholder { /* Padrão para a maioria dos navegadores */
+    color: #ffffff; /* Cor mais visível, pode ser ajustada */
+    opacity: 0.7; /* Para não ficar tão forte quanto o texto de entrada real */
+}
+
+.input-field input::-webkit-input-placeholder { /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    color: #E6E6FA;
+    opacity: 0.7;
+}
+
+.input-field input::-moz-placeholder { /* Para Firefox */
+    color: #E6E6FA;
+    opacity: 0.7;
+}
+
+.input-field input:-ms-input-placeholder { /* Para Internet Explorer */
+    color: #E6E6FA;
+    opacity: 0.7;
+}
+
 
 .input-field input::-webkit-outer-spin-button,
 .input-field input::-webkit-inner-spin-button {
@@ -355,6 +389,10 @@ body {
 
     #bmi {
         font-size: 2.5rem;
+    }
+
+    #bmi span:last-child {
+        font-size: 1rem;
     }
 
     #description {
