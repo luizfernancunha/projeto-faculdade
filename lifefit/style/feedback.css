@@ -1,39 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #222; /* Fundo escuro */
-  color: white;
-  padding-top: 90px; /* Espaço para o cabeçalho fixo */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+    background-color: #222; /* Fundo escuro */
+    color: white;
+    padding-top: 90px; /* Espaço para o cabeçalho fixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* Estilos do cabeçalho (navbar) */
 header {
-  width: 100%;
-  padding: 28px 8%;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 100%;
+    padding: 28px 8%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 #navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #nav-logo {
@@ -46,48 +46,48 @@ header {
 }
 
 #nav-list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 32px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
 }
 
 .nav-item a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  transition: color 0.3s, border-bottom 0.3s;
-  padding-bottom: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
 }
 
 .nav-item a:hover {
-  /*color: blueviolet;*/
+    /*color: blueviolet;*/ /* Esta linha está comentada no seu CSS original. Se quiser efeito, descomente ou defina uma cor. */
 }
 
 .nav-item.active a { /* Estilo para o link ativo na navbar */
-  color: white;
-  border-bottom: none;
+    color: white;
+    border-bottom: none;
 }
 
 .btn-default {
-  padding: 8px 16px;
-  background-color: blueviolet;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    padding: 8px 16px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
 
 .btn-default a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .btn-default:hover {
-  background-color: #6a1bbd;
+    background-color: #6a1bbd;
 }
 
 /* ESTILOS PARA O CONTAINER PRINCIPAL DO FEEDBACK */
@@ -125,7 +125,7 @@ header {
     transform: translateX(-50%);
 }
 
-/* Mensagens de resposta do PHP */
+/* Mensagens de resposta do PHP (Classes mantidas, mas sem uso direto no HTML puro) */
 .response-message {
     padding: 12px 15px;
     margin-bottom: 1.5rem;
@@ -243,7 +243,7 @@ header {
         border-radius: 6px;
         color: white; /* Garantir texto branco no ativo */
     }
-     .btn-default {
+    .btn-default {
         width: 90%; /* Ajustado para ocupar mais espaço */
         max-width: 250px; /* Limite máximo */
         margin: 10px auto;
@@ -279,7 +279,7 @@ header {
     #navbar {
         gap: 10px; /* Ajustar gap da navbar */
     }
-     header {
+    header {
         padding: 15px 3%;
     }
     #nav-list {
