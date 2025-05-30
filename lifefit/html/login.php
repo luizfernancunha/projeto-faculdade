@@ -22,6 +22,31 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
 ?>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -40,15 +65,19 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                 <li class="nav-item"><a href="../html/calculadora.php">Cálculo</a></li>
                 <li class="nav-item"><a href="../html/paciente.php">Paciente</a></li>
                 <li class="nav-item "><a href="../html/avaliacao.php">Avaliação</a></li> 
-                <li><button class="btn-default">Login</button></li>
+                
             </ul>
         </nav>
     </header>
 
+
+
+
+
     <div class="main-content">
         <div class="container <?php echo $form_active_class; ?>">
             <div class="form-box login">
-                <form action="../testeregistre.php" method="post">
+                <form action="../testelogin.php" method="post">
                     <h1>Login</h1>
                     <div id="loginMessage" class="message-area">
                         <?php
@@ -64,15 +93,15 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                         ?>
                     </div>
                     <div class="input-box">
-                        <input type="email" placeholder="Email" name="login_email" required><i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="email" name="email" required><i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Senha" name="login_password" required><i class="fa-solid fa-lock"></i>
+                        <input type="senha" placeholder="senha" name="senha" required><i class="fa-solid fa-lock"></i>
                     </div>
                     <div class="forgot-link">
                         <a href="#">Esqueceu sua senha?</a>
                     </div>
-                    <button type="submit" class="btn" name="login_submit">Login</button>
+                    <button type="submit" class="btn" name="submit">Login</button>
                     <p>ou faça login pelas suas plataformas:</p>
                     <div class="social-icons">
                         <a href="#"><i class="fa-brands fa-google"></i></a>
@@ -107,13 +136,13 @@ $result=mysqli_query($conn ,"INSERT INTO usuario(nome, email, senha) VALUES ('$n
                        
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Nome" name="nome" value="<?php echo htmlspecialchars($name ?? ''); ?>" required><i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="nome" name="nome" value="<?php echo htmlspecialchars($name ?? ''); ?>" required><i class="fa-solid fa-user"></i>
                     </div>
                     <div class="input-box">
-                        <input type="email" placeholder="Email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" required><i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" required><i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Senha" name="senha" required><i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="senha" name="senha" required><i class="fa-solid fa-lock"></i>
                     </div>
                     <button type="submit" class="btn" name="submit">Registre-se</button>
                     <p>ou registre-se pelas suas plataformas</p>
