@@ -15,7 +15,7 @@
 
 <header>
     <nav id="navbar">
-        <i class="fa-solid fa-dumbbell" id="nav-logo">LIVE FIT</i>
+        <i class="fa-solid fa-dumbbell" id="nav-logo">LIFE FIT</i>
         <ul id="nav-list">
             <li class="nav-item"><a href="index.php">Início</a></li>
             <li class="nav-item"><a href="../html/calculadora.php">Cálculo</a></li>
