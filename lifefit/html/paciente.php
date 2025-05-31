@@ -20,14 +20,15 @@ print_r('Objetivo: '. $_POST['objetivo']);
 include_once '../conexao.php';
 
 $nome = $_POST['nome'];
-$datanacimento = $_POST['data']; 
+$datanacimento = $_POST['data'];
+$genero = $_POST['genero']; 
 $altura = $_POST['altura']; 
 $peso = $_POST['peso']; 
 $nivel_de_atividade = $_POST['nivel']; 
 $objetivo = $_POST['objetivo'];
 
 
-$result =mysqli_query($conn ,"INSERT INTO paciente(nome, datanacimento, altura, peso, nivel_de_atividade, objetivo) VALUES ('$nome', '$datanacimento', $altura, $peso, '$nivel_de_atividade', '$objetivo')");
+$result =mysqli_query($conn ,"INSERT INTO paciente(nome, datanacimento,genero, altura, peso, nivel_de_atividade, objetivo) VALUES ('$nome', '$datanacimento','$genero', $altura, $peso, '$nivel_de_atividade', '$objetivo')");
 
 
 
